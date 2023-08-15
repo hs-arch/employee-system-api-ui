@@ -25,7 +25,13 @@ const AddEmployee = () => {
         e.preventDefault(); // will help us prevent refreshing the page because at this point we have all updated values in our state. we dont want to loose that.
         
         // very simply passing the data from employee state in saveEmployuee service, which will be hittting out API.
-        EmployeeService.saveEmployee(employee);
+        EmployeeService.saveEmployee(employee)
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     }
 
   return (
